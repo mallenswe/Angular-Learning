@@ -8,8 +8,10 @@
 <!-- <p>{{ serverName }}</p> -->
 <!-- <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button> -->
 <button class="btn btn-primary" [disabled]="userName === ''" (click)="onCreateServer()">Add Server</button>
-<p [innerText]="allowNewServer"></p>
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<!-- <p [innerText]="allowNewServer"></p>
+<p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was create, server name is {{ serversList[serversList.length - 1] }}</p>
+<ng-template #noServer><p>No server was created</p></ng-template>
+<app-server *ngFor="let server of serversList"></app-server>
+
 
