@@ -12,6 +12,8 @@ export class ServersComponent implements OnInit {
   userName = '';
   serverCreated = false;
   serversList = ['Test Server', 'Another One'];
+  showDetails = false;
+  detailsClicked = [];
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -30,6 +32,10 @@ export class ServersComponent implements OnInit {
     this.serverName = '';
   }
 
+  toggleDetails() {
+    this.showDetails = !this.showDetails;
+    this.detailsClicked.push(Math.random());
+  }
   // onUpdateServerName(event: any) {
   //   this.serverName = event.target.value;
   // }

@@ -8,6 +8,11 @@
 <!-- <p>{{ serverName }}</p> -->
 <!-- <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button> -->
 <button class="btn btn-primary" [disabled]="userName === ''" (click)="onCreateServer()">Add Server</button>
+<button class="btn btn-secondary" (click)="toggleDetails()">Display Details</button>
+<p *ngIf="showDetails">Displaying details of extra content</p>
+<ul>
+    <li *ngFor="let randomDetails of detailsClicked; index as index"><span [ngStyle]="{backgroundColor: index >= 5 ? 'blue' : ''}" [ngClass]="{'text-white': index >= 5}">{{ index }}: {{ randomDetails }}</span></li>
+</ul>
 <!-- <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreationStatus }}</p> -->
 <p *ngIf="serverCreated; else noServer">Server was create, server name is {{ serversList[serversList.length - 1] }}</p>
