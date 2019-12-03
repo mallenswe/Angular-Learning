@@ -16,6 +16,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DeepdiveComponent } from './deepdive/deepdive.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DeepdiveComponent } from './deepdive/deepdive.component';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DeepdiveComponent
+    DeepdiveComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,

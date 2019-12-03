@@ -6,23 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deepdive.component.css']
 })
 export class DeepdiveComponent {
-  serverElements = [];
-  newServerName = '';
-  newServerContent = '';
+  serverElements = [{type: 'server', name: 'Test Server', content: 'Some Content'}];
 
-  onAddServer() {
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
       type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: serverData.serverName,
+      content: serverData.serverContent
     });
   }
 
-  onAddBlueprint() {
+  onBlueprintAdded(blueprintData: {blueprintName: string, blueprintContent: string}) {
     this.serverElements.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: blueprintData.blueprintName,
+      content: blueprintData.blueprintContent
     });
+
   }
 }
