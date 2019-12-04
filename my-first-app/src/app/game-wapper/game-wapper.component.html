@@ -1,0 +1,5 @@
+<app-game-control (evenNumberEmit)="pushEvenNumber($event)" (oddNumberEmit)="pushOddNumber($event)" (clearNumbers)="clearNumbers($event)"></app-game-control>
+<div class="container mt-5">
+  <app-odd *ngFor="let oddNumber of oddArray" [oddNumber]="oddNumber"></app-odd>
+  <app-even *ngFor="let evenNumber of evenArray" [evenNumber]="evenNumber"></app-even>
+</div>
