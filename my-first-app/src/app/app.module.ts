@@ -22,6 +22,10 @@ import { GameControlComponent } from './game-control/game-control.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { GameWapperComponent } from './game-wapper/game-wapper.component';
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { OddEvenComponent } from './odd-even/odd-even.component';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { GameWapperComponent } from './game-wapper/game-wapper.component';
     GameControlComponent,
     OddComponent,
     EvenComponent,
-    GameWapperComponent
+    GameWapperComponent,
+    BasicHighlightDirective,
+    OddEvenComponent,
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
