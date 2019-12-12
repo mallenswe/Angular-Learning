@@ -27,6 +27,9 @@ import { OddEvenComponent } from './odd-even/odd-even.component';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { MainAccountComponent } from './main-account/main-account.component';
+import { AccountStatusComponent } from './account-status/account-status.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { DropdownDirective } from './shared/dropdown.directive';
     OddEvenComponent,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    MainAccountComponent,
+    AccountStatusComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

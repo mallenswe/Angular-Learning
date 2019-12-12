@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="form-group">
+            <select class="form-control" (change)="emitColorChange($event.target.value)">
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+            </select>
+          </div>
+      <app-new-account
+        (accountAdded)="onAccountAdded($event)"
+      ></app-new-account>
+      <hr />
+      <app-account-status
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        [id]="i"
+        (statusChanged)="onStatusChanged($event)"
+      ></app-account-status>
+    </div>
+  </div>
+</div>
