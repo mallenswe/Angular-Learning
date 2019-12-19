@@ -30,6 +30,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { MainAccountComponent } from './main-account/main-account.component';
 import { AccountStatusComponent } from './account-status/account-status.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import { ShoppingListService } from './services/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
