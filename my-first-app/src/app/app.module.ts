@@ -31,6 +31,14 @@ import { MainAccountComponent } from './main-account/main-account.component';
 import { AccountStatusComponent } from './account-status/account-status.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { ShoppingListService } from './services/shopping-list.service';
+import { RoutingSectionComponent } from './routing-section/routing-section.component';
+import { RoutingUsersComponent } from './routing-users/routing-users.component';
+import { RoutingHomeComponent } from './routing-home/routing-home.component';
+import { RoutingServersComponent } from './routing-servers/routing-servers.component';
+import { RouterUserComponent } from './routing-users/router-user/router-user.component';
+import { RoutingUserComponent } from './routing-users/routing-user/routing-user.component';
+import { EditServerComponent } from './routing-servers/edit-server/edit-server.component';
+import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +68,15 @@ import { ShoppingListService } from './services/shopping-list.service';
     DropdownDirective,
     MainAccountComponent,
     AccountStatusComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    RoutingSectionComponent,
+    RoutingUsersComponent,
+    RoutingHomeComponent,
+    RoutingServersComponent,
+    RouterUserComponent,
+    RoutingUserComponent,
+    EditServerComponent,
+    RoutingServerComponent
   ],
   imports: [
     BrowserModule,
