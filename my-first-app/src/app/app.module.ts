@@ -50,6 +50,10 @@ const appRoutes: Routes = [
     component:  RoutingUsersComponent
   },
   {
+    path: 'users/:id/:name',
+    component:  RoutingUserComponent
+  },
+  {
     path: 'servers',
     component:  RoutingServersComponent
   }
