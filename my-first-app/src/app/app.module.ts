@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -35,10 +36,24 @@ import { RoutingSectionComponent } from './routing-section/routing-section.compo
 import { RoutingUsersComponent } from './routing-users/routing-users.component';
 import { RoutingHomeComponent } from './routing-home/routing-home.component';
 import { RoutingServersComponent } from './routing-servers/routing-servers.component';
-import { RouterUserComponent } from './routing-users/router-user/router-user.component';
 import { RoutingUserComponent } from './routing-users/routing-user/routing-user.component';
 import { EditServerComponent } from './routing-servers/edit-server/edit-server.component';
 import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component:  RoutingHomeComponent
+  },
+  {
+    path: 'users',
+    component:  RoutingUsersComponent
+  },
+  {
+    path: 'servers',
+    component:  RoutingServersComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -73,7 +88,6 @@ import { RoutingServerComponent } from './routing-servers/routing-server/routing
     RoutingUsersComponent,
     RoutingHomeComponent,
     RoutingServersComponent,
-    RouterUserComponent,
     RoutingUserComponent,
     EditServerComponent,
     RoutingServerComponent
@@ -81,7 +95,8 @@ import { RoutingServerComponent } from './routing-servers/routing-server/routing
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
