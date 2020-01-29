@@ -13,8 +13,8 @@ export class RoutingHomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLoadServers() {
-    this.router.navigate(['/servers']);
+  onLoadServers(id: number) {
+    this.router.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});
   }
 
 }

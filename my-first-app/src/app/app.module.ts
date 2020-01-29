@@ -39,25 +39,40 @@ import { RoutingServersComponent } from './routing-servers/routing-servers.compo
 import { RoutingUserComponent } from './routing-users/routing-user/routing-user.component';
 import { EditServerComponent } from './routing-servers/edit-server/edit-server.component';
 import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component:  RoutingHomeComponent
+    component: RoutingHomeComponent
   },
   {
     path: 'users',
-    component:  RoutingUsersComponent
-  },
-  {
-    path: 'users/:id/:name',
-    component:  RoutingUserComponent
+    component: RoutingUsersComponent,
+    children: [
+      {
+        path: ':id/:name',
+        component: RoutingUserComponent
+      }
+    ]
   },
   {
     path: 'servers',
-    component:  RoutingServersComponent
-  }
-]
+    component: RoutingServersComponent,
+    children: [
+      {
+        path: ':id',
+        component: RoutingServerComponent
+      },
+      {
+        path: ':id/edit',
+        component: EditServerComponent
+      }
+    ]
+  },
+  { path: 'not-found', component: PageNotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
+];
 
 @NgModule({
   declarations: [
@@ -94,7 +109,8 @@ const appRoutes: Routes = [
     RoutingServersComponent,
     RoutingUserComponent,
     EditServerComponent,
-    RoutingServerComponent
+    RoutingServerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
