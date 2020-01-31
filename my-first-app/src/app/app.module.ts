@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -40,39 +39,14 @@ import { RoutingUserComponent } from './routing-users/routing-user/routing-user.
 import { EditServerComponent } from './routing-servers/edit-server/edit-server.component';
 import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
 
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: RoutingHomeComponent
-  },
-  {
-    path: 'users',
-    component: RoutingUsersComponent,
-    children: [
-      {
-        path: ':id/:name',
-        component: RoutingUserComponent
-      }
-    ]
-  },
-  {
-    path: 'servers',
-    component: RoutingServersComponent,
-    children: [
-      {
-        path: ':id',
-        component: RoutingServerComponent
-      },
-      {
-        path: ':id/edit',
-        component: EditServerComponent
-      }
-    ]
-  },
-  { path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: '/not-found'}
-];
+
 
 @NgModule({
   declarations: [
@@ -110,15 +84,16 @@ const appRoutes: Routes = [
     RoutingUserComponent,
     EditServerComponent,
     RoutingServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, AuthGuard, AuthService, CanDeactivateGuard, RoutingServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
