@@ -45,6 +45,8 @@ import { AuthService } from './auth.service';
 import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 
 
@@ -85,7 +87,9 @@ import { RoutingServerResolver } from './routing-servers/routing-server/routing-
     EditServerComponent,
     RoutingServerComponent,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
