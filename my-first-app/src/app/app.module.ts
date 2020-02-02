@@ -47,6 +47,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ObservableUserComponent } from './observable-user/observable-user.component';
+import { ObservableHomeComponent } from './observable-home/observable-home.component';
 
 
 
@@ -89,7 +91,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     PageNotFoundComponent,
     ErrorPageComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ObservableUserComponent,
+    ObservableHomeComponent
   ],
   imports: [
     BrowserModule,
