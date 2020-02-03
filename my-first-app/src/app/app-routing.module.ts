@@ -21,15 +21,16 @@ import { ObservableHomeComponent } from './observable-home/observable-home.compo
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-    {path: 'user/:id', component: ObservableUserComponent},
-    {path: 'ObservableHome', component: ObservableHomeComponent},
     { path: 'recipes', component: RecipesComponent, children: [
         {path: '', component: RecipeStartComponent},
         {path: 'new', component: RecipeEditComponent},
         {path: ':id', component: RecipeDetailComponent},
         {path: ':id/edit', component: RecipeEditComponent},
     ] },
-    { path: 'shopping-list', component: ShoppingListComponent }
+    { path: 'shopping-list', component: ShoppingListComponent },
+    {path: 'ObservableHome', component: ObservableHomeComponent, children: [
+        {path: 'ObservableUser/:id', component: ObservableUserComponent}
+    ]},
 ];
 // Routing Section Routes
 // [

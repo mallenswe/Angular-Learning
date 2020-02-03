@@ -10,7 +10,7 @@ export class DropdownDirective {
     const dropdownMenu = this.elementRef.nativeElement.nextElementSibling;
     this.isOpen = !this.isOpen;
 
-    console.log('this.isOpen: ', this.isOpen, this.elementRef);
+    // console.log('this.isOpen: ', this.isOpen, this.elementRef);
 
     if (this.isOpen) {
       this.renderer.addClass(dropdownMenu, 'show');
