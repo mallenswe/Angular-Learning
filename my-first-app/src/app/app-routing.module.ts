@@ -18,6 +18,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { ObservableUserComponent } from './observable-user/observable-user.component';
 import { ObservableHomeComponent } from './observable-home/observable-home.component';
+import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     {path: 'ObservableHome', component: ObservableHomeComponent, children: [
         {path: 'ObservableUser/:id', component: ObservableUserComponent}
     ]},
+    {path: 'simple-form', component: SimpleFormComponent}
 ];
 // Routing Section Routes
 // [

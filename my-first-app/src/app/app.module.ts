@@ -50,6 +50,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { ObservableUserComponent } from './observable-user/observable-user.component';
 import { ObservableHomeComponent } from './observable-home/observable-home.component';
 import { ObservableUserService } from './observable-user/observable-user.service';
+import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 
 
 
@@ -94,7 +95,8 @@ import { ObservableUserService } from './observable-user/observable-user.service
     RecipeStartComponent,
     RecipeEditComponent,
     ObservableUserComponent,
-    ObservableHomeComponent
+    ObservableHomeComponent,
+    SimpleFormComponent
   ],
   imports: [
     BrowserModule,
