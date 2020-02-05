@@ -51,6 +51,7 @@ import { ObservableUserComponent } from './observable-user/observable-user.compo
 import { ObservableHomeComponent } from './observable-home/observable-home.component';
 import { ObservableUserService } from './observable-user/observable-user.service';
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 
 
 
@@ -96,7 +97,8 @@ import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
     RecipeEditComponent,
     ObservableUserComponent,
     ObservableHomeComponent,
-    SimpleFormComponent
+    SimpleFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
