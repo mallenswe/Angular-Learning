@@ -20,6 +20,7 @@ import { ObservableUserComponent } from './observable-user/observable-user.compo
 import { ObservableHomeComponent } from './observable-home/observable-home.component';
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { ServerStatusComponent } from './pipe/server-status/server-status.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
         {path: 'ObservableUser/:id', component: ObservableUserComponent}
     ]},
     {path: 'simple-form', component: SimpleFormComponent},
-    {path: 'reactive-form', component: ReactiveFormComponent}
+    {path: 'reactive-form', component: ReactiveFormComponent},
+    {path: 'server-status', component: ServerStatusComponent}
 ];
 // Routing Section Routes
 // [

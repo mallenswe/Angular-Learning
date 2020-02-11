@@ -53,6 +53,9 @@ import { ObservableUserService } from './observable-user/observable-user.service
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { RecipeService } from './services/recipe.service';
+import { ServerStatusComponent } from './pipe/server-status/server-status.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -99,7 +102,10 @@ import { RecipeService } from './services/recipe.service';
     ObservableUserComponent,
     ObservableHomeComponent,
     SimpleFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ServerStatusComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
