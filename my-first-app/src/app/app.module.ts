@@ -52,6 +52,7 @@ import { ObservableHomeComponent } from './observable-home/observable-home.compo
 import { ObservableUserService } from './observable-user/observable-user.service';
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { RecipeService } from './services/recipe.service';
 
 
 
@@ -113,7 +114,8 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
     AuthService,
     CanDeactivateGuard,
     RoutingServerResolver,
-    ObservableUserService
+    ObservableUserService,
+    RecipeService
   ],
   bootstrap: [AppComponent]
 })
