@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -56,6 +56,11 @@ import { RecipeService } from './services/recipe.service';
 import { ServerStatusComponent } from './pipe/server-status/server-status.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HttpRecipePostComponent } from './http/http-recipe-post/http-recipe-post.component';
+import { PostsService } from './http/http-recipe-post/posts.service';
+import { AuthInterceptorService } from './http/http-recipe-post/auth-interceptor.service';
+import { LoggingInterceptorService } from './http/http-recipe-post/logging-interceptor.service';
+import { DataStorageService } from './shared/data-storage.service';
 
 
 
@@ -105,7 +110,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormComponent,
     ServerStatusComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    HttpRecipePostComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +127,11 @@ import { FilterPipe } from './pipes/filter.pipe';
     CanDeactivateGuard,
     RoutingServerResolver,
     ObservableUserService,
-    RecipeService
+    RecipeService,
+    PostsService,
+    DataStorageService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService,  multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService,  multi: true}
   ],
   bootstrap: [AppComponent]
 })

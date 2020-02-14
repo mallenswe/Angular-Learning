@@ -1,16 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RoutingHomeComponent } from './routing-home/routing-home.component';
-import { RoutingUsersComponent } from './routing-users/routing-users.component';
-import { RoutingUserComponent } from './routing-users/routing-user/routing-user.component';
-import { RoutingServersComponent } from './routing-servers/routing-servers.component';
-import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
-import { EditServerComponent } from './routing-servers/edit-server/edit-server.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './auth-guard.service';
-import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
@@ -21,14 +10,16 @@ import { ObservableHomeComponent } from './observable-home/observable-home.compo
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { ServerStatusComponent } from './pipe/server-status/server-status.component';
+import { HttpRecipePostComponent } from './http/http-recipe-post/http-recipe-post.component';
+import { RecipesResolverService } from './recipes/recipes.resolver.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
     { path: 'recipes', component: RecipesComponent, children: [
         {path: '', component: RecipeStartComponent},
         {path: 'new', component: RecipeEditComponent},
-        {path: ':id', component: RecipeDetailComponent},
-        {path: ':id/edit', component: RecipeEditComponent},
+        {path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService]},
+        {path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService]},
     ] },
     { path: 'shopping-list', component: ShoppingListComponent },
     {path: 'ObservableHome', component: ObservableHomeComponent, children: [
@@ -36,7 +27,8 @@ const appRoutes: Routes = [
     ]},
     {path: 'simple-form', component: SimpleFormComponent},
     {path: 'reactive-form', component: ReactiveFormComponent},
-    {path: 'server-status', component: ServerStatusComponent}
+    {path: 'server-status', component: ServerStatusComponent},
+    {path: 'http-recipe-post', component: HttpRecipePostComponent}
 ];
 // Routing Section Routes
 // [

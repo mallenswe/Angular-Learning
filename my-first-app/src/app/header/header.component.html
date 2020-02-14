@@ -8,10 +8,10 @@
             <li class="nav-item" routerLinkActive="active" ><a class="nav-link" [routerLink]="['/recipes']">Recipes</a></li>
             <li class="nav-item" routerLinkActive="active" ><a class="nav-link" [routerLink]="['/shopping-list']">Shopping</a></li>
             <li class="nav-item dropdown">
-                <a appDropdown id="navbarDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <a appDropdown id="navbarDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" style="cursor: pointer;">Save Data</a>
-                    <a class="dropdown-item" style="cursor: pointer;">Fetch Data</a>
+                    <a class="dropdown-item" style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+                    <a class="dropdown-item" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -33,6 +33,12 @@
                 <a appDropdown id="navbarFormsDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pipes</a>
                 <div class="dropdown-menu" aria-labelledby="navbarFormsDropdown">
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['server-status']">Server Status</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a appDropdown id="navbarFormsDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HTTP</a>
+                <div class="dropdown-menu" aria-labelledby="navbarFormsDropdown">
+                    <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['http-recipe-post']">Recipe Post</a>
                 </div>
             </li>
         </ul>
