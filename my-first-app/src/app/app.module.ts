@@ -40,8 +40,10 @@ import { EditServerComponent } from './routing-servers/edit-server/edit-server.c
 import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthGuard } from './auth-guard.service';
-import { AuthService } from './auth.service';
+// import { AuthGuard } from './auth-guard.service';
+import { AuthGuard } from './auth/auth.guard';
+import { LocalAuthService } from './local-auth.service';
+import { AuthService } from './auth/auth.service';
 import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
@@ -61,6 +63,8 @@ import { PostsService } from './http/http-recipe-post/posts.service';
 import { AuthInterceptorService } from './http/http-recipe-post/auth-interceptor.service';
 import { LoggingInterceptorService } from './http/http-recipe-post/logging-interceptor.service';
 import { DataStorageService } from './shared/data-storage.service';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 
@@ -111,7 +115,9 @@ import { DataStorageService } from './shared/data-storage.service';
     ServerStatusComponent,
     ShortenPipe,
     FilterPipe,
-    HttpRecipePostComponent
+    HttpRecipePostComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -123,6 +129,7 @@ import { DataStorageService } from './shared/data-storage.service';
   providers: [
     ShoppingListService,
     AuthGuard,
+    LocalAuthService,
     AuthService,
     CanDeactivateGuard,
     RoutingServerResolver,

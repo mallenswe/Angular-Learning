@@ -12,10 +12,12 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
 import { ServerStatusComponent } from './pipe/server-status/server-status.component';
 import { HttpRecipePostComponent } from './http/http-recipe-post/http-recipe-post.component';
 import { RecipesResolverService } from './recipes/recipes.resolver.service';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-    { path: 'recipes', component: RecipesComponent, children: [
+    { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard], children: [
         {path: '', component: RecipeStartComponent},
         {path: 'new', component: RecipeEditComponent},
         {path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService]},
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     {path: 'simple-form', component: SimpleFormComponent},
     {path: 'reactive-form', component: ReactiveFormComponent},
     {path: 'server-status', component: ServerStatusComponent},
-    {path: 'http-recipe-post', component: HttpRecipePostComponent}
+    {path: 'http-recipe-post', component: HttpRecipePostComponent},
+    {path: 'auth', component: AuthComponent}
 ];
 // Routing Section Routes
 // [

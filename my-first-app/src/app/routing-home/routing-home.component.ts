@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { LocalAuthService } from '../local-auth.service';
 
 @Component({
   selector: 'app-routing-home',
@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class RoutingHomeComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private localAuthService: LocalAuthService) { }
 
   ngOnInit() {
   }
@@ -19,10 +19,10 @@ export class RoutingHomeComponent implements OnInit {
   }
 
   onLogin() {
-    this.authService.login();
+    this.localAuthService.login();
   }
   onLogout() {
-    this.authService.logout();
+    this.localAuthService.logout();
   }
 
 }
