@@ -65,6 +65,8 @@ import { LoggingInterceptorService } from './http/http-recipe-post/logging-inter
 import { DataStorageService } from './shared/data-storage.service';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
 
 
 
@@ -117,7 +119,9 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     FilterPipe,
     HttpRecipePostComponent,
     AuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceHolderDirective
   ],
   imports: [
     BrowserModule,
@@ -140,6 +144,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService,  multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService,  multi: true}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AlertComponent]
 })
 export class AppModule { }
