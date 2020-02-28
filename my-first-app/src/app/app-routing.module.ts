@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { ObservableUserComponent } from './observable-user/observable-user.component';
 import { ObservableHomeComponent } from './observable-home/observable-home.component';
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
@@ -10,13 +10,27 @@ import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-    {path: 'ObservableHome', component: ObservableHomeComponent, children: [
-        {path: 'ObservableUser/:id', component: ObservableUserComponent}
-    ]},
-    {path: 'simple-form', component: SimpleFormComponent},
-    {path: 'reactive-form', component: ReactiveFormComponent},
-    {path: 'server-status', component: ServerStatusComponent},
-    {path: 'http-recipe-post', component: HttpRecipePostComponent},
+    {
+        path: 'recipes',
+        loadChildren: () => import('./recipes/recipes.module').then(recipesModule => recipesModule.RecipesModule)
+    },
+    {
+        path: 'shopping-list',
+        loadChildren: () => import('./shopping-list/shopping.module').then(shoppingModule => shoppingModule.ShoppingModule)
+    },
+    {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(authModule => authModule.AuthModule)
+    },
+    {
+        path: 'ObservableHome', component: ObservableHomeComponent, children: [
+            { path: 'ObservableUser/:id', component: ObservableUserComponent }
+        ]
+    },
+    { path: 'simple-form', component: SimpleFormComponent },
+    { path: 'reactive-form', component: ReactiveFormComponent },
+    { path: 'server-status', component: ServerStatusComponent },
+    { path: 'http-recipe-post', component: HttpRecipePostComponent },
 ];
 // Routing Section Routes
 // [
@@ -58,7 +72,7 @@ const appRoutes: Routes = [
 // ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules})],
     exports: [RouterModule]
 
 })

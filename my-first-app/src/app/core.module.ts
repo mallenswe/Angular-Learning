@@ -13,6 +13,7 @@ import { AuthService } from './auth/auth.service';
 import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
 import { ShoppingListService } from './services/shopping-list.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoggingService } from './logging.service';
 
 
 @NgModule({

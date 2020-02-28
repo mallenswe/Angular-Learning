@@ -43,12 +43,9 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HttpRecipePostComponent } from './http/http-recipe-post/http-recipe-post.component';
 
-import { AuthComponent } from './auth/auth.component';
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingModule } from './shopping-list/shopping.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
-import { AuthModule } from './auth/auth.module';
+import { LoggingService } from './logging.service';
 
 
 
@@ -98,12 +95,10 @@ import { AuthModule } from './auth/auth.module';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AuthModule,
     SharedModule,
     ReactiveFormsModule,
-    RecipesModule,
-    ShoppingModule
   ],
+  // providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
