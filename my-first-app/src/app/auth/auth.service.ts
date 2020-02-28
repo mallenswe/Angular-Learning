@@ -27,7 +27,6 @@ export class AuthService {
     private authSignIn = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.firebaseKey}`;
 
     signup(email: string, password: string) {
-        console.log('this.authSignUp: ', this.authSignUp);
         return this.http.post<AuthResponseData>(this.authSignUp, {
             email,
             password,
@@ -38,7 +37,6 @@ export class AuthService {
     }
 
     signin(email: string, password: string) {
-        console.log('this.authSignIn: ', this.authSignIn);
         return this.http.post<AuthResponseData>(this.authSignIn, {
             email,
             password,
@@ -55,13 +53,11 @@ export class AuthService {
             _token: string;
             _tokenExpirationDate: string;
         } = JSON.parse(localStorage.getItem('userData'));
-        console.log('autoLogin userData: ', userData);
         if (!userData) {
             return;
         }
 
         const loadedUser = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
-        console.log('autoLogin loadedUser: ', loadedUser);
 
         if (loadedUser.token) {
             this.user.next(loadedUser);

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -9,12 +9,6 @@ import { ServersComponent } from './servers/servers.component';
 import { SuccessComponent } from './alerts/success/success.component';
 import { WarningComponent } from './alerts/warning/warning.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DeepdiveComponent } from './deepdive/deepdive.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
@@ -26,11 +20,9 @@ import { BasicHighlightDirective } from './basic-highlight/basic-highlight.direc
 import { OddEvenComponent } from './odd-even/odd-even.component';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { MainAccountComponent } from './main-account/main-account.component';
 import { AccountStatusComponent } from './account-status/account-status.component';
 import { NewAccountComponent } from './new-account/new-account.component';
-import { ShoppingListService } from './services/shopping-list.service';
 import { RoutingSectionComponent } from './routing-section/routing-section.component';
 import { RoutingUsersComponent } from './routing-users/routing-users.component';
 import { RoutingHomeComponent } from './routing-home/routing-home.component';
@@ -40,33 +32,23 @@ import { EditServerComponent } from './routing-servers/edit-server/edit-server.c
 import { RoutingServerComponent } from './routing-servers/routing-server/routing-server.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-// import { AuthGuard } from './auth-guard.service';
-import { AuthGuard } from './auth/auth.guard';
-import { LocalAuthService } from './local-auth.service';
-import { AuthService } from './auth/auth.service';
-import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
+
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { ObservableUserComponent } from './observable-user/observable-user.component';
 import { ObservableHomeComponent } from './observable-home/observable-home.component';
-import { ObservableUserService } from './observable-user/observable-user.service';
 import { SimpleFormComponent } from './forms/simple-form/simple-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
-import { RecipeService } from './services/recipe.service';
 import { ServerStatusComponent } from './pipe/server-status/server-status.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HttpRecipePostComponent } from './http/http-recipe-post/http-recipe-post.component';
-import { PostsService } from './http/http-recipe-post/posts.service';
-import { AuthInterceptorService } from './http/http-recipe-post/auth-interceptor.service';
-import { LoggingInterceptorService } from './http/http-recipe-post/logging-interceptor.service';
-import { DataStorageService } from './shared/data-storage.service';
+
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { AlertComponent } from './shared/alert/alert.component';
-import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive';
+import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingModule } from './shopping-list/shopping.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -78,12 +60,6 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
     SuccessComponent,
     WarningComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     DeepdiveComponent,
     CockpitComponent,
     ServerElementComponent,
@@ -95,7 +71,6 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
     OddEvenComponent,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective,
     MainAccountComponent,
     AccountStatusComponent,
     NewAccountComponent,
@@ -108,8 +83,6 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
     RoutingServerComponent,
     PageNotFoundComponent,
     ErrorPageComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
     ObservableUserComponent,
     ObservableHomeComponent,
     SimpleFormComponent,
@@ -118,33 +91,19 @@ import { PlaceHolderDirective } from './shared/placeholder/placeholder.directive
     ShortenPipe,
     FilterPipe,
     HttpRecipePostComponent,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceHolderDirective
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    AuthModule,
+    SharedModule,
+    ReactiveFormsModule,
+    RecipesModule,
+    ShoppingModule
   ],
-  providers: [
-    ShoppingListService,
-    AuthGuard,
-    LocalAuthService,
-    AuthService,
-    CanDeactivateGuard,
-    RoutingServerResolver,
-    ObservableUserService,
-    RecipeService,
-    PostsService,
-    DataStorageService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService,  multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService,  multi: true}
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [AlertComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import { Component, ComponentFactoryResolver, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { format } from 'url';
 import { AuthService, AuthResponseData } from './auth.service';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -42,18 +41,18 @@ export class AuthComponent implements OnDestroy {
         }
 
         authObservable.subscribe(response => {
-            console.log('authObservable response: ', response);
+            // console.log('authObservable response: ', response);
             this.isLoading = false;
             this.router.navigate(['/recipes']);
         },
             errorMessage => {
                 console.log('authObservable error: ', errorMessage);
                 this.error = errorMessage;
-                this.showErrorAlert(errorMessage);
+                // this.showErrorAlert(errorMessage);
                 this.isLoading = false;
             });
 
-        console.log(authForm.value);
+        // console.log(authForm.value);
         authForm.reset();
     }
 
@@ -69,7 +68,7 @@ export class AuthComponent implements OnDestroy {
         const alertComponentRef = hostViewContainerRef.createComponent(alertComponentFactory);
 
         alertComponentRef.instance.message = message;
-        this.closeSubscription = alertComponentRef.instance.close.subscribe(() => {
+        this.closeSubscription = alertComponentRef.instance.closeAlert.subscribe(() => {
             this.closeSubscription.unsubscribe();
             hostViewContainerRef.clear();
         });
