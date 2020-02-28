@@ -45,7 +45,7 @@ import { HttpRecipePostComponent } from './http/http-recipe-post/http-recipe-pos
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
-import { LoggingService } from './logging.service';
+// import { LoggingService } from './logging.service';
 
 
 

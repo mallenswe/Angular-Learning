@@ -13,7 +13,7 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
   server: { id: number, name: string, status: string };
   serverName = '';
   serverStatus = '';
-  private allowEdit = false;
+  allowEdit = false;
   changesSaved = false;
 
   constructor(private serversService: ServersService, private route: ActivatedRoute, private router: Router) { }
