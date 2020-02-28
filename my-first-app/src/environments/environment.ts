@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  firebase: 'https://angular-recipes-92a3b.firebaseio.com/'
+  firebase: 'https://angular-recipes-92a3b.firebaseio.com/',
+  firebaseKey: `AIzaSyBTP7m2aS_VRanQlCjkpcU8Cyr6EK30_GQ`
 };
 
 /*
