@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+.dropdown-menu {
+    background-color: #fff; 
+    border: 1px solid rgb(233, 235, 236);
+    border-radius: 0;
+}
+.slideIn {
+    /* animation: slideIn .3s ease-in; */
+    height: auto;
+    max-height: 276px;
+    overflow: hidden;
+    transition: max-height .35s ease;
+}
+@keyframes slideIn {
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    100% {
+      transform:translateY(0rem);
+      opacity: 1;
+    }
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+  }

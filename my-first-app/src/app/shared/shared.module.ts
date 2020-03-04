@@ -4,13 +4,17 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { PlaceHolderDirective } from './placeholder/placeholder.directive';
 import { DropdownDirective } from './dropdown.directive';
 import { CommonModule } from '@angular/common';
+import { NavbarCollapseDirective } from './navbar-collapse.directive';
+import { DropdownMenuDirective } from './dropdown-menu.directive';
 
 @NgModule({
     declarations: [
         AlertComponent,
         LoadingSpinnerComponent,
         PlaceHolderDirective,
-        DropdownDirective
+        DropdownDirective,
+        DropdownMenuDirective,
+        NavbarCollapseDirective
     ],
     imports: [
         CommonModule
@@ -20,6 +24,8 @@ import { CommonModule } from '@angular/common';
         LoadingSpinnerComponent,
         PlaceHolderDirective,
         DropdownDirective,
+        DropdownMenuDirective,
+        NavbarCollapseDirective,
         CommonModule
     ],
     entryComponents: [AlertComponent]

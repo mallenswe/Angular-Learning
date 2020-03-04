@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a href="#" class="navbar-brand">Recipe Book</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenuItems" aria-controls="navbarMenuItems" aria-expanded="false" aria-label="Toggle navigation">
+    <button appNavbarCollapse class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarMenuItems" aria-controls="navbarMenuItems" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarMenuItems">
@@ -9,7 +9,7 @@
             <li class="nav-item" routerLinkActive="active" ><a class="nav-link" [routerLink]="['/shopping-list']">Shopping</a></li>
             <li class="nav-item dropdown">
                 <a appDropdown id="navbarObservableDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Observable</a>
-                <div class="dropdown-menu" aria-labelledby="navbarObservableDropdown">
+                <div appDropdownMenu class="dropdown-menu shadow-sm" aria-labelledby="navbarObservableDropdown">
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['ObservableHome']">Home</a>
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['ObservableHome/ObservableUser', 1]">User 1</a>
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['ObservableHome/ObservableUser', 2]">User 2</a>
@@ -17,20 +17,20 @@
             </li>
             <li class="nav-item dropdown">
                 <a appDropdown id="navbarFormsDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Forms</a>
-                <div class="dropdown-menu" aria-labelledby="navbarFormsDropdown">
+                <div appDropdownMenu class="dropdown-menu shadow-sm" aria-labelledby="navbarFormsDropdown">
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['simple-form']">Simple Form</a>
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['reactive-form']">Reactive Form</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a appDropdown id="navbarFormsDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pipes</a>
-                <div class="dropdown-menu" aria-labelledby="navbarFormsDropdown">
+                <div appDropdownMenu class="dropdown-menu shadow-sm" aria-labelledby="navbarFormsDropdown">
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['server-status']">Server Status</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a appDropdown id="navbarFormsDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HTTP</a>
-                <div class="dropdown-menu" aria-labelledby="navbarFormsDropdown">
+                <div appDropdownMenu class="dropdown-menu shadow-sm" aria-labelledby="navbarFormsDropdown">
                     <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['http-recipe-post']">Recipe Post</a>
                 </div>
             </li>
@@ -38,7 +38,7 @@
         <ul class="navbar-nav justify-content-end">
             <li class="nav-item dropdown" *ngIf="isAuthenticated">
                 <a appDropdown id="navbarDropdown" class="nav-link dropdown-toggle" style="cursor: pointer;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div appDropdownMenu class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
                     <a class="dropdown-item" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
                 </div>
