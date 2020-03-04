@@ -5,8 +5,7 @@
     border: 1px solid rgb(233, 235, 236);
     border-radius: 0;
 }
-.slideIn {
-    /* animation: slideIn .3s ease-in; */
+/* .slideIn {
     height: auto;
     max-height: 276px;
     overflow: hidden;
@@ -25,4 +24,4 @@
       transform: translateY(1rem);
       opacity: 0;
     }
-  }
+  } */

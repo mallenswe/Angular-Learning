@@ -18,13 +18,13 @@ export class NavbarCollapseDirective {
     if (!this.isCollapsed) {
       this.renderer.removeClass(navbarToggler, 'collapsed');
       this.renderer.setAttribute(navbarToggler, 'aria-expanded', 'true');
-      this.renderer.addClass(navbarMenu, 'slideIn');
+      // this.renderer.addClass(navbarMenu, 'slideIn');
       this.renderer.addClass(navbarMenu, 'show');
 
     } else {
       this.renderer.addClass(navbarToggler, 'collapsed');
       this.renderer.setAttribute(navbarToggler, 'aria-expanded', 'false');
-      this.renderer.removeClass(navbarMenu, 'slideIn');
+      // this.renderer.removeClass(navbarMenu, 'slideIn');
       this.renderer.removeClass(navbarMenu, 'show');
     }
   }
