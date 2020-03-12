@@ -9,8 +9,6 @@ export class DropdownMenuDirective {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   @HostListener('click') toggleOpen() {
-    console.log('DropdownMenuDirective: ', this.elementRef);
-
     this.elementRef.nativeElement.offsetParent.firstChild.click();
 
   }

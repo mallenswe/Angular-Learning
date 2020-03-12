@@ -11,14 +11,14 @@ import { AuthGuard } from './auth/auth.guard';
 import { LocalAuthService } from './local-auth.service';
 import { AuthService } from './auth/auth.service';
 import { CanDeactivateGuard } from './routing-servers/edit-server/can-deactivate-guard.service';
-import { ShoppingListService } from './services/shopping-list.service';
+// import { ShoppingListService } from './services/shopping-list.old.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { LoggingService } from './logging.service';
 
 
 @NgModule({
     providers: [
-        ShoppingListService,
+        // ShoppingListService,
         AuthGuard,
         LocalAuthService,
         AuthService,

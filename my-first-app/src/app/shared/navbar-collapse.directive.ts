@@ -13,7 +13,6 @@ export class NavbarCollapseDirective {
     const navbarToggler = this.elementRef.nativeElement;
     const navbarMenu = this.elementRef.nativeElement.nextElementSibling;
     this.isCollapsed = !this.isCollapsed;
-    console.log('navbarCollapse: ', navbarMenu);
 
     if (!this.isCollapsed) {
       this.renderer.removeClass(navbarToggler, 'collapsed');

@@ -7,7 +7,6 @@ export class DropdownDirective {
   private isOpen = false;
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
   @HostListener('click') toggleOpen() {
-    console.log('DropdownDirective: ', this.elementRef);
     const dropdownMenu = this.elementRef.nativeElement.nextElementSibling;
     this.isOpen = !this.isOpen;
 
