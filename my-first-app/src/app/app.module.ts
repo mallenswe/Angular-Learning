@@ -48,6 +48,8 @@ import { CoreModule } from './core.module';
 // import { LoggingService } from './logging.service';
 import { StoreModule } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './auth/store/auth.effects';
 
 
 
@@ -93,6 +95,7 @@ import * as fromApp from './store/app.reducer';
   ],
   imports: [
     StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AuthEffects]),
     CoreModule,
     BrowserModule,
     FormsModule,
