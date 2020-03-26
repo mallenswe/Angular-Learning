@@ -103,7 +103,7 @@ import { RecipeEffects } from './recipes/store/recipe.effects';
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([AuthEffects, RecipeEffects]),
     CoreModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
