@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { PostsService } from './http/http-recipe-post/posts.service';
 import { AuthInterceptorService } from './http/http-recipe-post/auth-interceptor.service';
 import { LoggingInterceptorService } from './http/http-recipe-post/logging-interceptor.service';
-import { DataStorageService } from './shared/data-storage.service';
-import { RecipeService } from './services/recipe.service';
 import { ObservableUserService } from './observable-user/observable-user.service';
 import { RoutingServerResolver } from './routing-servers/routing-server/routing-server-resolver.service';
 import { AuthGuard } from './auth/auth.guard';
@@ -25,9 +23,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
         CanDeactivateGuard,
         RoutingServerResolver,
         ObservableUserService,
-        RecipeService,
         PostsService,
-        DataStorageService,
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService, multi: true }
     ]
