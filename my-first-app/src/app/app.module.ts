@@ -50,6 +50,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth/store/auth.effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -98,6 +99,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     EffectsModule.forRoot([AuthEffects]),
     CoreModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
