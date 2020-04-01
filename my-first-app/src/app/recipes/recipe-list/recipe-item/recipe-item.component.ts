@@ -61,11 +61,11 @@ export class RecipeItemComponent implements OnInit {
   }
 
   animationStarted() {
-    console.log('divState animation started');
+    // console.log('divState animation started');
   }
 
   animationDone() {
-    console.log('divState animation ended');
+    // console.log('divState animation ended');
   }
 
 
