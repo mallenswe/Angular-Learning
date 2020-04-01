@@ -42,7 +42,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         animate(500)
       ]),
     ])
-
   ]
 })
 export class RecipeItemComponent implements OnInit {
@@ -59,6 +58,14 @@ export class RecipeItemComponent implements OnInit {
   onAnimate() {
     console.log('selected');
     this.state === 'normal' ? this.state = 'shifted' : this.state = 'normal';
+  }
+
+  animationStarted() {
+    console.log('divState animation started');
+  }
+
+  animationDone() {
+    console.log('divState animation ended');
   }
 
 

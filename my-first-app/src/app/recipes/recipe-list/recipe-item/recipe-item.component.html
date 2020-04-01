@@ -6,12 +6,15 @@
     routerLinkActive="active"
     [@divState]="state"
     [@listOne]
+    (@divState.start)="animationStarted()"
+    (@divState.done)="animationDone()"
     (click)="onAnimate()"
   >
     <div class="float-left">
       <h5 class="mb-1">{{ recipe.name }}</h5>
       <p>{{ recipe.description }}</p>
     </div>
+    
     <span class="float-right">
       <img
         [src]="recipe.imagePath"
